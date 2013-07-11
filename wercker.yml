@@ -1,0 +1,8 @@
+box: wercker/nodejs
+deploy:
+  steps:
+    - heroku-deploy
+    - wouter/check-heroku-log:
+        api-key: $HEROKU_KEY
+        app-name: $HEROKU_APP_NAME
+        
