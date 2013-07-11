@@ -1,4 +1,8 @@
 box: wercker/nodejs
+build:
+  steps:
+    - script:
+        code: echo Building
 deploy:
   steps:
     - heroku-deploy
