@@ -6,6 +6,10 @@ build:
 deploy:
   steps:
     - heroku-deploy
+  passed-steps:
+    - script:
+        name: waiting before checking heroku log
+        code: sleep 60
     - wouter/check-heroku-log:
         api-key: $HEROKU_KEY
         app-name: $HEROKU_APP_NAME
